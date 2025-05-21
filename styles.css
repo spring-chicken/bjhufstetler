@@ -1,0 +1,316 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: justify;
+    hyphens: auto;
+    font-feature-settings: "kern", "liga", "clig", "calt";
+    letter-spacing: 0.01em;
+    background-color: #fff;
+    color: #000;
+}
+
+.body {
+    max-width: 27.5em;
+    margin: 0 auto;
+    padding: 0.75in 0.75in;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.author-head h1 {
+    text-align: center;
+    font-size: 2em;
+    font-variant: small-caps;
+    margin-bottom: 1.5em;
+}
+
+.book-card {
+    border-top: 1px solid #000;
+    padding-top: 1.5em;
+    margin-bottom: 2em;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.book-card h2 {
+    font-size: 1.5em;
+    margin: 0.5em 0 0.2em;
+}
+
+.book-card h3 {
+    font-size: 1.2em;
+    font-style: italic;
+    margin: 0.2em 0 0.8em;
+}
+
+.book-img img {
+    width: 100%;
+    height: auto;
+    background-color: #eee; /* Placeholder for book cover */
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+}
+
+.book-details {
+    margin-left: 1em;
+}
+
+/* Book Links */
+.book-links-read a,
+.book-links-buy a {
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+    border-bottom: 1px dotted #aaa;
+    padding-bottom: 0.1em;
+}
+
+.book-links-read {
+    margin-top: 1em;
+}
+
+/* Generic Card Sections */
+.card {
+    border-top: 1px solid black;
+    padding-top: 2em;
+    margin-top: 2em;
+    text-align: justify;
+}
+
+/* About Author */
+.author-img {
+    max-width: 200px;
+    height: auto;
+    margin: auto;
+}
+
+.author-img img {
+    width: 100%;
+}
+
+/* Paragraph Text */
+.author p {
+    margin-bottom: 1em;
+}
+
+/* Signup Form */
+.signup-form {
+    margin-top: 1em;
+}
+
+.signup-form input[type="text"] {
+    font-family: 'EB Garamond', serif;
+    font-size: 1em;
+    padding: 0.3em;
+    border: 1px solid #aaa;
+    width: 60%;
+    margin-right: 0.5em;
+}
+
+.signup-form button {
+    font-family: 'EB Garamond', serif;
+    font-size: 1em;
+    padding: 0.3em 0.6em;
+    border: 1px solid black;
+    background-color: white;
+    cursor: pointer;
+}
+
+/* Links */
+a {
+    color: black;
+    font-style: italic;
+    text-decoration: none;
+    border-bottom: 1px dotted #999;
+}
+
+a:hover {
+    border-bottom: 1px solid black;
+}
+
+.page {
+    max-width: 27.5em;
+    margin: 0 auto 1em;
+    padding: 0.75in 0.75in;
+    font-family: 'EB Garamond', serif;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: justify;
+    hyphens: auto;
+    font-feature-settings: "kern", "liga", "clig", "calt";
+    letter-spacing: 0.01em;
+    border: 1px solid black;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+}
+
+.chapter {
+    font-size: 1.8em;
+    font-variant: small-caps;
+    text-align: center;
+    margin: 3em 0 2em;
+}
+
+.next-chapter {
+    margin-top: 1em;
+    text-align: right;
+}
+
+.pb {
+    text-indent: 1.5em;
+    margin-bottom: 0;
+    orphans: 3;
+    widows: 3;
+}
+
+.dots {
+    text-align: center;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    orphans: 3;
+    widows: 3;
+}
+
+.dropcap {
+    float: bottom;
+    font-size: 3em;
+    line-height: 1;
+    padding-right: 0.1em;
+    padding-top: 0.1em;
+    font-weight: normal;
+    font-family: 'EB Garamond', serif;
+}
+
+.fan-submissions {
+    margin-top: 4em;
+    margin-bottom: 4em;
+    padding-top: 2em;
+    border-top: 1px solid black;
+    text-align: left;
+}
+
+.fan-header {
+    text-align: center;
+    font-size: 1.4em;
+    font-variant: small-caps;
+    margin-bottom: 10px;
+}
+
+.fan-submission {
+    text-align: center;
+    margin: 0px;
+    padding: 1em;
+}
+
+.fanart {
+    margin: 0.5em auto;
+    width: 50%;
+    text-align: right;
+}
+
+.fanart img {
+    margin: auto;
+    height: auto;
+    width: 100%;
+    display: block;
+    border: 1px solid #333;
+}
+
+.fan-credit {
+    font-size: 0.9em;
+    font-style: italic;
+    margin-top: 0.3em;
+    margin-right: 0.5em;
+}
+
+.site-header {
+    border-bottom: 1px solid black;
+    padding: 1em 0;
+    margin-bottom: 2em;
+    font-family: 'EB Garamond', serif;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    max-width: 27.5em;
+    margin: 0 auto;
+    padding: 0 0.75in;
+    font-size: 1.1em;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+    padding: 0.2em 0.5em;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+.toc-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 2em;
+    line-height: 2;
+}
+
+.toc-list li {
+    margin-bottom: 0.5em;
+    font-size: 1.1em;
+    text-align: left;
+}
+
+.toc-list a {
+    text-decoration: none;
+    color: black;
+    font-style: italic;
+    border-bottom: 1px dotted #aaa;
+    padding-bottom: 0.1em;
+}
+
+.toc-list a:hover {
+    color: #333;
+    border-bottom: 1px solid black;
+}
+
+
+@media (max-width: 600px) {
+    .page {
+        max-width: 100%;
+        padding: 2.5em;
+        margin: 0;
+        font-size: 1em;
+        border: none;
+    }
+
+    .fanart {
+        width: 90%;
+    }
+
+    .body {
+        max-width: 100%;
+        padding: 2.5em;
+        margin: 0;
+        font-size: 1em;
+        border: none;
+    }
+
+    .signup-form input[type="text"] {
+        width: 100%;
+        margin-bottom: 1em;
+    }
+
+    .signup-form button {
+        width: 100%;
+    }
+}
