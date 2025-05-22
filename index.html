@@ -31,7 +31,7 @@
             <div class="author">
                 <p>I am a mechanical engineer and space operations officer serving in the United States Space Force, currently working as a NASA CapCom for the International Space Station. My past roles include Space Sciences Department Head at the Space Force's premier technical school, chief satellite engineer for a $30B constellation, air quality engineer, middle school English and Calculus teacher in South Korea, and line cook/dishwasher.</p>
                 <p>I am passionate about teaching orbital mechanics and exploring Fermi style rabbit holes. Outside of work, I like running, cycling, reading, and listening to podcasts. You can find me on <a href="https://x.com/bjhufstetler">X</a>, though I mostly just repost space news.</p>
-                <p>Fun fact: My five-person D&D group played the same campaign weekly for eight straight years! I'm also honored to be a past recipient of the <a href="https://geeklyinc.com/">GeeklyInc</a> Geekly of the Year Award.</p>
+                <p>Fun fact: My five-person D&D group once played the same campaign weekly for eight straight years! I'm also honored to be a past recipient of the <a href="https://geeklyinc.com/">GeeklyInc</a> Geekly of the Year Award.</p>
                 <p>All opinions are my own.</p>
             </div>
             <div class="author-img">
@@ -40,11 +40,15 @@
         </div>
         <!-- <div class="card">
             <div><h2>Stay Informed</h2></div>
-            <div>Sign up to for news about BJ Hufstetler and updates on Kepler's Saga.</div>
+            <div>Sign up for news about BJ Hufstetler and updates on Kepler's Saga.</div>
+            <p>Note: I will only send out emails when there is an update to a story here (~once every week or so). You can unsubscribe at any time. I will never give your email address away for any reason.</p>
             <div class="signup-form">
-                <form>
-                    <input type="text">
-                    <button>Sign Up</button>
+                <form id="frm-signup">
+                    <input id="txt-signup" type="text">
+                    <div>                        
+                        <button id="btn-signup" type="submit">Subscribe</button>
+                        <button id="btn-unsubscribe" type="button">Unsubscribe</button>
+                    </div>
                 </form>
             </div>
         </div> -->
@@ -53,4 +57,60 @@
             <p>Contact BJ Hufstetler via email at <a href="mailto:self@bjhufstetler.com">self@bjhufstetler.com</a>.</p>
         </div>
     </body>
+    <!-- <script>
+        document.getElementById("frm-signup").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const email = document.getElementById("txt-signup").value;
+            if (!email || !email.includes("@")) {
+                alert("Please enter a valid email address.");
+                return;
+            };
+            fetch("https://apiendpoint.com/subscribe", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({email: email})
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("Thanks for signing up!");
+                } else {
+                    alert("Something went wrong. Please try again.");
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Network error. Please try again later.");
+            });
+
+            document.getElementById('btn-unsubscribe').addEventListener('click', function() {
+                const email = document.getElementById('txt-signup').value;
+    
+                if (!email || !email.includes('@')) {
+                    alert('Please enter a valid email address.');
+                    return;
+                }
+    
+                fetch('https://apiendpoint.com/unsubscribe', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email: email })
+                })
+                .then(response => {
+                    if (response.ok) {
+                        alert('You have been unsubscribed. I love you, bye.');
+                    } else {
+                        alert('Unsubscribe failed. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Network error. Please try again later.');
+                });
+            });
+        });
+    </script> -->
 </html>
