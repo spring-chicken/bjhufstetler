@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap">
+        <link rel="stylesheet" href="/styles.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Ch. 1</title>
+    </head>
+    <body>
+        <div class="site-header">
+            <nav class="nav-links">
+                <a href="/index.html">Home</a>
+                <a href="toc.html">TOC</a>
+            </nav>
+        </div>
+        <div class="page">
+            <div class="page-header">
+                <span>The Epoch of Kepler</span>
+                <span>Snowtap</span>
+            </div>
+            <div class="chapter">Chapter 1</div>
+            <div id="output"></div>
+            <div class="next-chapter">
+                <a href="Ch02.html">Chapter 2</a>
+            </div>
+        </div>
+        <section class="fan-submissions">
+            <h2 class="fan-header">Fan Art</h2>
+            <p class="fan-submission">Join the community and discussion.</p>
+            <p class="fan-submission">Submit art or comments to <a href="mailto:self@bjhufstetler.com">self@bjhufstetler.com</a></p>
+            <div class="fanart">
+                <img src="imgs/Ch1-1.png" alt="Fan Art">
+                <div class="fan-credit"></div>
+            </div>
+        </section>
+    </body>
+    <script>
+        const output = document.getElementById('output');
+
+        fetch("files/ch01.txt")
+            .then(response => response.text())
+            .then(data => {
+                data = data.replace(/\\newchapter\{.*?\}/g, '');
+                data = data.replace(/\\lettrine\[.*?\]\{(.*?)\}\{(.*?)\}/g, (match, drop, rest) => {
+                    return `<span class="dropcap">${drop}</span>${rest}`;
+                });
+                data = data.replace(/\\textit\{(.*?)\}/g, '<i>$1</i>');
+                data = data.replace(/\\threedots/g, '<div class="dots">***</div>');
+                const paragraphs = data.trim().split(/\n\s*\n/);
+                const htmlParagraphs = paragraphs.map(p => `<div>${p.trim()}</div>`);
+                const finalHtml = `<div class="pb">\n${htmlParagraphs.join('\n')}\n</div>`;
+                output.innerHTML = finalHtml;
+                console.log(finalHtml)
+            })
+            .catch(error => {
+                console.error("Error reading file", error);
+            });
+        
+        
+    
+        </script>
+</html>

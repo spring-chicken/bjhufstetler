@@ -38,79 +38,60 @@
                 <img src="public/author-portrait.png">
             </div>
         </div>
-        <!-- <div class="card">
+        <div class="card">
             <div><h2>Stay Informed</h2></div>
             <div>Sign up for news about BJ Hufstetler and updates on Kepler's Saga.</div>
             <p>Note: I will only send out emails when there is an update to a story here (~once every week or so). You can unsubscribe at any time. I will never give your email address away for any reason.</p>
             <div class="signup-form">
-                <form id="frm-signup">
-                    <input id="txt-signup" type="text">
+                <form id="frm-signup" method="POST">
+                    <input id="txt-signup" type="text" name="email" required>
+                    <input type="hidden" name="action" id="frm-action" value="subscribe">
                     <div>                        
                         <button id="btn-signup" type="submit">Subscribe</button>
                         <button id="btn-unsubscribe" type="button">Unsubscribe</button>
                     </div>
                 </form>
             </div>
-        </div> -->
+        </div>
         <div class="card">
             <div><h2>Contact</h2></div>
             <p>Contact BJ Hufstetler via email at <a href="mailto:self@bjhufstetler.com">self@bjhufstetler.com</a>.</p>
         </div>
-    </body>
-    <!-- <script>
-        document.getElementById("frm-signup").addEventListener("submit", function(e) {
-            e.preventDefault();
-            const email = document.getElementById("txt-signup").value;
-            if (!email || !email.includes("@")) {
-                alert("Please enter a valid email address.");
-                return;
-            };
-            fetch("https://apiendpoint.com/subscribe", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({email: email})
-            })
-            .then(response => {
-                if (response.ok) {
-                    alert("Thanks for signing up!");
-                } else {
-                    alert("Something went wrong. Please try again.");
-                }
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("Network error. Please try again later.");
-            });
+        <script>
+           document.addEventListener('DOMContentLoaded', function () {
+                const form = document.getElementById('frm-signup');
+                const emailInput = document.getElementById('txt-signup');
+                const actionInput = document.getElementById('frm-action');
+                const scriptURL = "https://script.google.com/macros/s/AKfycbyCzpHJDvtD3Z0lcX9JFrafHW0ZCpam7fo5yX_Hk7bpQR_8zyrG25OuafcGzmi8EcI-/exec";
 
-            document.getElementById('btn-unsubscribe').addEventListener('click', function() {
-                const email = document.getElementById('txt-signup').value;
-    
-                if (!email || !email.includes('@')) {
-                    alert('Please enter a valid email address.');
-                    return;
+                function submitForm() {
+                    const formData = new FormData(form);
+                    fetch(scriptURL, {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.text())
+                    .then(text => {
+                        alert(text);
+                        emailInput.value = "";
+                    })
+                    .catch(error => {
+                        console.error("Error!", error.message);
+                        alert("Something went wrong. Please try again.");
+                    });
                 }
-    
-                fetch('https://apiendpoint.com/unsubscribe', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ email: email })
-                })
-                .then(response => {
-                    if (response.ok) {
-                        alert('You have been unsubscribed. I love you, bye.');
-                    } else {
-                        alert('Unsubscribe failed. Please try again.');
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                    alert('Network error. Please try again later.');
+
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    actionInput.value = 'subscribe';
+                    submitForm();
+                });
+
+                document.getElementById('btn-unsubscribe').addEventListener('click', function () {
+                    actionInput.value = 'unsubscribe';
+                    submitForm();
                 });
             });
-        });
-    </script> -->
+        </script>
+    </body>
 </html>
