@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Epoch of Kepler</title>
+</head>
+<body>
+  <div class="site-header">
+    <nav class="nav-links">
+      <a href="/index.html">Home</a>
+    </nav>
+  </div>
+
+  <div class="page">
+    <div class="page-header">
+      <span>The Epoch of Kepler</span>
+      <span>Snowtap</span>
+    </div>
+
+    <!-- Chapter Dropdown -->
+    <div class="chapter-dropdown">
+      <label for="chapter-select">Select Chapter:</label>
+      <select id="chapter-select">
+        <option value="">-- Snowtap --</option>
+        <option value="01">Chapter 1</option>
+        <option value="02">Chapter 2</option>
+        <!-- Add more options here -->
+      </select>
+    </div>
+
+    <!-- TOC Section -->
+    <div id="toc">
+      <h2>Table of Contents</h2>
+      <ul class="toc-list">
+        <li><a href="#" data-ch="01">Chapter 1</a></li>
+        <li><a href="#" data-ch="02">Chapter 2</a> <i>*new* added 6/19/25</i></li>
+        <li>New chapters will be posted every week or so.</li>
+      </ul>
+
+      <div class="card">
+        <div><h2>Stay Informed</h2></div>
+        <p>Sign up for updates about BJ Hufstetler and Kepler's Saga.</p>
+        <div class="signup-form">
+          <form id="frm-signup">
+            <input id="txt-signup" type="text" name="email" required placeholder="Your email">
+            <input type="hidden" name="action" id="form-action" value="subscribe">
+            <div>
+              <button id="btn-signup" type="submit">Subscribe</button>
+              <button id="btn-unsubscribe" type="button">Unsubscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chapter Content Section -->
+    <div id="chapter-content" style="display:none;">
+      <div class="chapter" id="chapter-title"></div>
+      <div id="output"></div>
+      <div class="next-chapter-link"></div>
+
+      <!-- Fan Submissions -->
+      <section class="fan-submissions">
+        <h2 class="fan-header">Fan Art</h2>
+        <p class="fan-submission">Join the community and discussion.</p>
+        <p class="fan-submission">Submit art or comments to <a href="mailto:self@bjhufstetler.com">self@bjhufstetler.com</a></p>
+        <div id="fanart" class="fanart"></div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const output = document.getElementById('output');
+      const fanart = document.getElementById('fanart');
+      const chapterSelect = document.getElementById('chapter-select');
+      const toc = document.getElementById('toc');
+      const chapterContent = document.getElementById('chapter-content');
+      const chapterTitle = document.getElementById('chapter-title');
+      const nextLink = document.querySelector('.next-chapter-link');
+
+      // Load chapter from dropdown or TOC link
+      function loadChapter(chNumber) {
+        const chNum = chNumber.padStart(2, '0');
+        const textUrl = `/Snowtap/files/ch${chNum}/ch${chNum}.txt`;
+        const imgBase = `/Snowtap/files/ch${chNum}/imgs/`;
+
+        fetch(textUrl)
+          .then(res => res.text())
+          .then(text => {
+            toc.style.display = 'none';
+            chapterContent.style.display = 'block';
+            chapterTitle.textContent = `Chapter ${parseInt(chNum)}`;
+
+            // Replace LaTeX-style formatting
+            text = text.replace(/\\newchapter\{.*?\}/g, '');
+            text = text.replace(/\\lettrine\[.*?\]\{(.*?)\}\{(.*?)\}/g, (match, drop, rest) => {
+              return `<span class="dropcap">${drop}</span>${rest}`;
+            });
+            text = text.replace(/\\textit\{(.*?)\}/g, '<i>$1</i>');
+            text = text.replace(/\\threedots/g, '<div class="dots">***</div>');
+            const paragraphs = text.trim().split(/\n\s*\n/);
+            output.innerHTML = `<div class="pb">${paragraphs.map(p => `<div>${p.trim()}</div>`).join('\n')}</div>`;
+
+            // Show next chapter link if exists
+            const nextCh = parseInt(chNum) + 1;
+            nextLink.innerHTML = `<a href="#" data-ch="${nextCh.toString().padStart(2, '0')}">Next Chapter</a>`;
+
+            // Load fan art
+            loadImages(imgBase);
+          })
+          .catch(err => {
+            output.innerHTML = `<p>Failed to load chapter.</p>`;
+            console.error("Error loading chapter", err);
+          });
+      }
+
+      function loadImages(basePath) {
+        fanart.innerHTML = "";
+        // Try images named 1.png, 2.png, ... until failure
+        let index = 1;
+        function tryLoadNext() {
+          const img = new Image();
+          const src = `${basePath}${index}.png`;
+          img.src = src;
+          img.onload = () => {
+            const container = document.createElement('div');
+            container.className = 'fan-credit';
+            container.appendChild(img);
+            fanart.appendChild(container);
+            index++;
+            tryLoadNext(); // Try next image
+          };
+          img.onerror = () => {
+            // Stop at first missing image
+          };
+        }
+        tryLoadNext();
+      }
+
+      // TOC links
+      document.querySelectorAll('.toc-list a').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          loadChapter(e.target.dataset.ch);
+          chapterSelect.value = e.target.dataset.ch;
+        });
+      });
+
+      // Dropdown selection
+      chapterSelect.addEventListener('change', (e) => {
+        const value = e.target.value;
+        if (value) loadChapter(value);
+        else {
+          toc.style.display = 'block';
+          chapterContent.style.display = 'none';
+        }
+      });
+
+      // Next chapter link
+      nextLink.addEventListener('click', (e) => {
+        const ch = e.target.dataset.ch;
+        if (ch) {
+          loadChapter(ch);
+          chapterSelect.value = ch;
+        }
+      });
+
+      // Email subscription handling (as before)
+      const form = document.getElementById('frm-signup');
+      const emailInput = document.getElementById('txt-signup');
+      const actionInput = document.getElementById('form-action');
+      const scriptURL = "https://script.google.com/macros/s/AKfycbyCzpHJDvtD3Z0lcX9JFrafHW0ZCpam7fo5yX_Hk7bpQR_8zyrG25OuafcGzmi8EcI-/exec";
+
+      function submitForm() {
+        const formData = new FormData(form);
+        fetch(scriptURL, {
+          method: 'POST',
+          body: formData
+        })
+        .then(res => res.text())
+        .then(text => {
+          alert(text);
+          emailInput.value = "";
+        })
+        .catch(err => {
+          console.error("Error!", err.message);
+          alert("Something went wrong. Please try again.");
+        });
+      }
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        actionInput.value = 'subscribe';
+        submitForm();
+      });
+
+      document.getElementById('btn-unsubscribe').addEventListener('click', () => {
+        actionInput.value = 'unsubscribe';
+        submitForm();
+      });
+    });
+  </script>
+</body>
+</html>
