@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" data-capo>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="public/favicon.ico" type="image/x-icon">
+        <title>Unsubscribe</title>
+    </head>
+    <body class="page" data-test="app-ready">
+            <div class="author-head">
+                <h1>Thanks for reading!</h1>
+            </div>
+            <div class="card">
+                <div>Thank you so much for joining me. Hope you enjoyed your time!</div>
+                <div class="signup-form">
+                    <form id="frm-signup" method="POST">
+                        <input id="txt-signup" type="text" name="email" placeholder="Your email" required>
+                        <input type="hidden" name="action" id="frm-action" value="subscribe">
+                        <div>                        
+                            <!-- <button id="btn-signup" type="submit">Subscribe</button> -->
+                            <button id="btn-unsubscribe" type="button">Unsubscribe</button>
+                        </div>
+                    </form>
+                </div>
+            
+        </div>
+
+        <script>
+           document.addEventListener('DOMContentLoaded', function () {
+                const form = document.getElementById('frm-signup');
+                const emailInput = document.getElementById('txt-signup');
+                const actionInput = document.getElementById('frm-action');
+                const scriptURL = "https://script.google.com/macros/s/AKfycbyCzpHJDvtD3Z0lcX9JFrafHW0ZCpam7fo5yX_Hk7bpQR_8zyrG25OuafcGzmi8EcI-/exec";
+
+                function submitForm() {
+                    const formData = new FormData(form);
+                    fetch(scriptURL, {
+                        method: 'POST',
+                        body: formData
+                    })
+                    .then(response => response.text())
+                    .then(text => {
+                        alert(text);
+                        emailInput.value = "";
+                    })
+                    .catch(error => {
+                        console.error("Error!", error.message);
+                        alert("Something went wrong. Please try again.");
+                    });
+                }
+
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    actionInput.value = 'subscribe';
+                    submitForm();
+                });
+
+                document.getElementById('btn-unsubscribe').addEventListener('click', function () {
+                    actionInput.value = 'unsubscribe';
+                    submitForm();
+                });
+            });
+        </script>
+    </body>
+</html>

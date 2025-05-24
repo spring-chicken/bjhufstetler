@@ -81,8 +81,15 @@
         const textUrl = `/Snowtap/files/ch${chNum}/ch${chNum}.txt`;
         const imgBase = `/Snowtap/files/ch${chNum}/imgs/`;
 
+        window.location.hash = `#${chNum}`;
+
         fetch(textUrl)
-          .then(res => res.text())
+          .then(res => {
+            if (!res.ok) {
+              throw new Error("Chapter not available.");
+            }
+            return res.text();
+          })
           .then(text => {
             toc.style.display = 'none';
             chapterContent.style.display = 'block';
@@ -106,10 +113,22 @@
             loadImages(imgBase);
           })
           .catch(err => {
-            output.innerHTML = `<p>Failed to load chapter.</p>`;
-            console.error("Error loading chapter", err);
+            toc.style.display = 'none';
+            chapterContent.style.display = 'block';
+            chapterTitle.textContent = `Chapter ${parseInt(chNum)}`;
+            output.innerHTML = `<p><em>Coming soon...</em></p><p>Join the <a href="/snowtap.html">mailing list</a> to be notified when this chapter becomes available.`;
+            fanart.innerHTML = '';
+            nextLink.innerHTML = ''; // hide or disable the next link
+            console.warn("Chapter not yet available:", err);
           });
       }
+
+      const initialHash = window.location.hash;
+      if (initialHash && /^#\d+$/.test(initialHash)) {
+        const chapter = initialHash.replace('#', '').padStart(2, '0');
+        loadChapter(chapter);
+        chapterSelect.value = chapter;
+      };
 
       function loadImages(basePath) {
         fanart.innerHTML = "";
@@ -128,7 +147,7 @@
             tryLoadNext(); // Try next image
           };
           img.onerror = () => {
-            // Stop at first missing image
+            return
           };
         }
         tryLoadNext();
