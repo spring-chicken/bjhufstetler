@@ -73,6 +73,31 @@
       const chapterTitle = document.getElementById('chapter-title');
       const nextLink = document.querySelector('.next-chapter-link');
 
+       /**
+       *  _    _ _____  _____       _______ ______   _    _ ______ _____  ______ 
+       * | |  | |  __ \|  __ \   /\|__   __|  ____| | |  | |  ____|  __ \|  ____|
+       * | |  | | |__) | |  | | /  \  | |  | |__    | |__| | |__  | |__) | |__   
+       * | |  | |  ___/| |  | |/ /\ \ | |  |  __|   |  __  |  __| |  _  /|  __|  
+       * | |__| | |    | |__| / ____ \| |  | |____  | |  | | |____| | \ \| |____ 
+       *  \____/|_|  __|_____/_/    \_\_|  |______| |_|  |_|______|_|  \_\______|
+       * 
+       *             \ \    / /                                                  
+       *              \ \  / /                                                   
+       *               \ \/ /                                                    
+       *                \  /                                                     
+       *                 \/                                                      */
+      const maxChapter = 3; // DO NOT FORGET TO UPDATE THIS NUMBER WHEN A NEW CHAPTER IS ADDED!
+
+      const select = document.getElementById("chapter-select");
+
+      for (let i = 1; i <= maxChapter; i++) {
+        const padded = i.toString().padStart(2, "0");
+        const option = document.createElement("option");
+        option.value = padded;
+        option.textContent = `Chapter ${i}`;
+        select.appendChild(option);
+      }
+
       // Load chapter from dropdown or TOC link
       function loadChapter(chNumber) {
         const chNum = chNumber.padStart(2, '0');
@@ -92,7 +117,7 @@
             toc.style.display = 'none';
             chapterContent.style.display = 'block';
             chapterTitle.textContent = `Chapter ${parseInt(chNum)}`;
-
+            
             // Replace LaTeX-style formatting
             text = text.replace(/\\newchapter\{.*?\}/g, '');
             text = text.replace(/\\lettrine\[.*?\]\{(.*?)\}\{(.*?)\}/g, (match, drop, rest) => {
@@ -102,19 +127,21 @@
             text = text.replace(/\\threedots/g, '<div class="dots">***</div>');
             const paragraphs = text.trim().split(/\n\s*\n/);
             output.innerHTML = `<div class="pb">${paragraphs.map(p => `<div>${p.trim()}</div>`).join('\n')}</div>`;
-
+            
             // Show next chapter link if exists
             const nextCh = parseInt(chNum) + 1;
-            nextLink.innerHTML = `<a href="#" data-ch="${nextCh.toString().padStart(2, '0')}">Next Chapter</a>`;
-
+            chNum < maxChapter ? 
+              nextLink.innerHTML = `<a href="#" data-ch="${nextCh.toString().padStart(2, '0')}">Next Chapter</a>`
+              :nextLink.innerHTML = `<a href="#" data-ch="99">Next Chapter</a>`;
+            
             // Load fan art
             loadImages(imgBase);
           })
           .catch(err => {
             toc.style.display = 'none';
             chapterContent.style.display = 'block';
-            chapterTitle.textContent = `Chapter ${parseInt(chNum)}`;
-            output.innerHTML = `<p><em>Coming soon...</em></p><p>Join the <a href="/snowtap.html">mailing list</a> to be notified when this chapter becomes available.`;
+            chapterTitle.textContent = `Coming Soon`;
+            output.innerHTML = `<p>Join the <a href="/snowtap.html">mailing list</a> to be notified when this chapter becomes available.`;
             fanart.innerHTML = '';
             nextLink.innerHTML = ''; // hide or disable the next link
             console.warn("Chapter not yet available:", err);
@@ -212,32 +239,6 @@
         actionInput.value = 'unsubscribe';
         submitForm();
       });
-
-
-       /**
-       *  _    _ _____  _____       _______ ______   _    _ ______ _____  ______ 
-       * | |  | |  __ \|  __ \   /\|__   __|  ____| | |  | |  ____|  __ \|  ____|
-       * | |  | | |__) | |  | | /  \  | |  | |__    | |__| | |__  | |__) | |__   
-       * | |  | |  ___/| |  | |/ /\ \ | |  |  __|   |  __  |  __| |  _  /|  __|  
-       * | |__| | |    | |__| / ____ \| |  | |____  | |  | | |____| | \ \| |____ 
-       *  \____/|_|  __|_____/_/    \_\_|  |______| |_|  |_|______|_|  \_\______|
-       * 
-       *             \ \    / /                                                  
-       *              \ \  / /                                                   
-       *               \ \/ /                                                    
-       *                \  /                                                     
-       *                 \/                                                      */
-      const maxChapter = 3; // DO NOT FORGET TO UPDATE THIS NUMBER WHEN A NEW CHAPTER IS ADDED!
-
-      const select = document.getElementById("chapter-select");
-
-      for (let i = 1; i <= maxChapter; i++) {
-        const padded = i.toString().padStart(2, "0");
-        const option = document.createElement("option");
-        option.value = padded;
-        option.textContent = `Chapter ${i}`;
-        select.appendChild(option);
-      }
     });
   </script>
 </body>
