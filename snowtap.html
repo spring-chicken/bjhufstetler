@@ -87,8 +87,8 @@
        *               \ \/ /                                                    
        *                \  /                                                     
        *                 \/                                                      */
-      const maxChapter = 6;
-      const updateDate = "6/13/25";
+      const maxChapter = 7;
+      const updateDate = "6/24/25";
 
       const updateDateElement = document.getElementById("txt-update");
       updateDateElement.innerHTML = updateDate;
@@ -99,7 +99,7 @@
         const padded = i.toString().padStart(2, "0");
         const option = document.createElement("option");
         option.value = padded;
-        option.textContent = `Chapter ${i}`;
+        option.textContent = `${i}`;
         select.appendChild(option);
       }
 
