@@ -1,5 +1,5 @@
 \newchapter{Ghostline 2}
-\lettrine[lraise=0.1]{S}{plashes} of red glared in front of the driver's window, warning signs with bold black letters, as if the Ghostline itself had rules you'd better not break.
+\lettrine[lraise=0.1]{S}{tepping} out of the car, Kepler first noticed a red warning sign with bold black letters, as if the Ghostline itself had rules you'd better not break.
 
 1. Power-off vehicles while the bay doors are closed.
 
@@ -7,9 +7,9 @@
 
 3. Return all borrowed books, magazines, games, and dishes to the lounge.
 
-The cabin pressed closed on all sides, just enough space to open a car door without smacking the wall. Above the posted rules, an illuminated sign glowed with the next stop: \textit{Vicanion - 34 minutes}
+The cabin was just wide enough to open a car door without smacking the wall. Above the posted rules, an illuminated sign glowed with the next stop: \textit{Vicanion - 34 minutes}
 
-Kepler's sneakers hit the floor before the car stopped rocking. He darted toward the door, barely noticing the extra weight he was carrying. Beneath the posted rules, there was a blue arrow painted on the door, pointing to the left, near a small square indentation, no knob or handle in sight.
+Kepler darted toward the door, slightly sluggish from the extra weight he was carrying, like he was ascending in an elevator. Beneath the posted rules, there was a blue arrow painted on the door, pointing to the left, near a small square indentation, no knob or handle in sight.
 
 He glanced back. His parents were still busy packing things away from the initial ride.
 
@@ -29,7 +29,7 @@ Beneath it, a low table and cushions slouched toward one corner. Or maybe the \t
 
 The far wall looked solid apart from four hexagonal cutouts stacked like honeycomb cells, each holding a bed. He reached into one, and the mattress rocked lazily beneath his palm, part hammock, part cradle, keeping its own rhythm against the train's.
 
-Then it hit him: the Ghostline was still accelerating. The slant had crept in so gradually his body had stopped complaining. As if to prove him right, the whole room began to level out. The chandelier's swing shifted from the back to the front, passing through center before it came to rest. Shadows steadied. The honeycomb beds stopped their slow sway. Kepler stood straighter and, just for a second, felt a strange lightness, as though the floor had forgotten some of his weight.
+Then it hit him: the Ghostline was still accelerating. The slant had crept in so gradually that his body had stopped noticing. As if to prove him right, the whole room began to level out. The chandelier's swing shifted from the back to the front, passing through center before it came to rest. Shadows steadied. The honeycomb beds stopped their slow sway. Kepler stood straighter and, just for a second, felt a strange lightness, as though the floor had forgotten some of his weight.
 
 "How fast do you think we're moving?" he asked.
 
@@ -55,13 +55,15 @@ Then it hit him: the Ghostline was still accelerating. The slant had crept in so
 
 "Like car sick?" asked Kepler.
 
-"Like space sick." said Johan, miming stuff floating in front of his face. "But out there, what comes up, doesn't always come down."
+"Like space sick," said Johan, miming stuff floating in front of his face. "But out there, what comes up, doesn't always come down."
 
 The door by the beds led to a narrow corridor linking several cabins, with a staircase waiting at either end. At the top, Kepler stepped into the lounge and stopped just to breathe it in: warm lamplight on leather chairs, bookshelves climbing the walls, the soft outline of a kiosk in the corner.
 
 No windows to the outside, but one whole wall pretended otherwise with a sweeping view of a lush garden framed by a painted sky. The trick was so convincing that for a moment Kepler almost leaned toward it, as if he could step right through.
 
-Then the floor shifted under his shoes. A glowing seam split the planks side-to-side across the lounge. Wood panels rose and tilted, slow but relentless, like the room itself was yawning open. Step by step, the back of the lounge climbed toward the front, each tread as wide as a cabin. Kepler’s brain said he was balanced, but his eyes disagreed. Luckily, his father's steady hand found his shoulder.
+Then the floor shifted under his shoes. A glowing seam split the planks side-to-side across the lounge. Wood panels rose and tilted, slow but relentless, like the room itself was yawning open, the way stairs grow out of the bottom of an escalator.
+
+Step by step, the back of the lounge leaned and climbed toward the front, each tread as wide as their passenger cabin. Kepler’s brain said he was balanced, but his eyes disagreed. Luckily, his father's steady hand found his shoulder.
 
 “I think we’re speeding up again,” Johan said, though Kepler barely heard over the thud of his own heartbeat. The floor’s tilt rolled under him, and he let it carry him two steps forward, half on purpose, half because it was easier than resisting.
 
@@ -83,7 +85,7 @@ Up close, her black uniform showed purple piping at the seams and gold trim at t
 
 She straightened, salesman-bright. "\textit{We lean so you don't!}" Then back to troublemaker mode. "Without it, you'd go sailing into the back wall every time we picked up speed. Makes luggage retrieval very exciting.
 
-Leana thought that Clair sounded way too excited by the thought of everything crashing around. Kepler leaned so far over the counter his chin nearly touched it, his eyes locked on Clair's as if she were revealing a secret.
+Leana raised an eyebrow. Clair's voice practially bounced as she described luggage crashing into the walls, like it was her favorite part of the job. Kepler leaned so far over the counter his chin nearly touched it, his eyes locked on Clair's as if she were revealing a secret.
 
 "Is it really that fast?" asked Kepler, unaware that the floor had returned to normal.
 
@@ -119,7 +121,7 @@ Clair playfully rolled her eyes over to Kepler, then used one hand to hide from 
 
 "We're not stopping at Vicanion," said Leana. "We've actually got a long way to go before we get off."
 
-Kepler watched as Clair turned to a panel on the wall with two rows of buttons. Most of the buttons were unmarked but a few of them had writing on small placards beneath them. Clair pushed two buttons, both with \textit{Vicanion} written on them, then wiped their placards clean with her thumb.
+Kepler watched as Clair turned to a panel on the wall with two rows of buttons. Most of the buttons were unmarked but a few of them had writing on small placards beneath them. Clair pushed two buttons, both with \textit{Vicanion} written on them, then wiped the Vicanion placards clean with her thumb.
 
 "How long are we talking?" asked Clair, turning back to face Leana.
 
@@ -149,13 +151,13 @@ Kepler laughed. "No, we only have three tickets."
 
 "Wait, you got a ticket to ride an orbital for your \textit{birthday}?" said Clair, seemingly perplexed. "Not to be rude, but how in the world did you manage that? All I ever get for mine is chocolate and hand-me-down underwear."
 
-Kepler laughed again.
+A bubble of laughter escaped Kepler, bright and surprised.
 
 "It's definitely a once-in-a-lifetime trip for us," said Johan. "The tickets are from a research grant and I'm working on the orbital."
 
 The word \textit{orbital} seemed to stick in Johan's throat as he said it.
 
-Clair nodded slowly, eyes narrowing in playful suspicion. "Research grant, huh? Okay. How old are you, then, to be doing research on an orbital?"
+Clair nodded slowly, eyes narrowing in playful suspicion. "Research grant, huh? Okay. How old are you, then? You're doing research on an orbital?"
 
 "Twelve today," said Kepler.
 
@@ -165,9 +167,9 @@ She grinned. "Well, birthday boy, I can't compete with Snowtap, but I can sneak 
 
 "Nothing too rich," Johan warned. "We don't want anyone getting sick on the orbital."
 
-Clair did the eye roll from Johan back to Kepler again.
+Clair did the eye-roll from Johan back to Kepler again.
 
-"Look, kid, you're already on top of the world today, or at least you will be, and you know what they say... the rich get richer, right? So I'm going to get you the richest thing we've got," whispered Clair. She leaned in so close her lips were almost touching Kepler's ear. "And it's not on the menu."
+"Look, kid, you're already on top of the world today, or at least you will be, and you know what they say... the rich get richer, right? So I'm going to get you the richest thing we've got," whispered Clair. She leaned in until her lips were nearly at Kepler's ear. "And it's not on the menu."
 
 Clair slipped on gloves, loaded three boxes, then set them in front of them one by one: "The great stuff, the good stuff, and the okay stuff. Guess which one's yours"
 
@@ -211,3 +213,7 @@ The next thing he knew, a soft chime filled the cabin. It wasn't loud, but it pu
 They returned to the car, buckling in just as the illuminated sign above the bay door blinked: \textit{Lykke - Arriving}. The Ghostline slowed with a long, smooth sigh. Then came the buzzer, a sharp, three-note burst, and the bay door opened with a hiss of escaping air.
 
 Vibrant afternoon light spilled in.
+
+\textit{Lekan Station} was written on the wall in golden mosaic letters, surrounded by a mural of the pyramidal base station and an iridescent streak trailing into a velvet-black sky. Lykke's jagged skyline rose behond, framed by the glittering outline of mountains.
+
+A cheerful voice greeted them. "Welcome to Lekan Station, gateway to Snowtap. Is this your first time?"
