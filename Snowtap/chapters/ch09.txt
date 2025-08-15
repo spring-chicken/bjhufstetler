@@ -57,7 +57,7 @@ Then it hit him: the Ghostline was still accelerating. The slant had crept in so
 
 "Like space sick," said Johan, miming stuff floating in front of his face. "But out there, what comes up, doesn't always come down."
 
-The door by the beds led to a narrow corridor linking several cabins, with a staircase waiting at either end. At the top, Kepler stepped into the lounge and stopped just to breathe it in: warm lamplight on leather chairs, bookshelves climbing the walls, the soft outline of a kiosk in the corner.
+The door by the beds led to a narrow corridor linking several cabins, with a staircase waiting at either end. At the top, Kepler stepped into the lounge and stopped to breathe it in: warm lamplight on leather chairs, bookshelves climbing the walls, the soft outline of a kiosk in the corner.
 
 No windows to the outside, but one whole wall pretended otherwise with a sweeping view of a lush garden framed by a painted sky. The trick was so convincing that for a moment Kepler almost leaned toward it, as if he could step right through.
 
@@ -93,7 +93,7 @@ Leana raised an eyebrow. Clair's voice practially bounced as she described lugga
 
 "Very cool," said Kepler. "I don't even feel it."
 
-"That's the beauty of it," said Clair. "You hop on, sip a tea, and \textit{boom}... you're halfway across the country. Speaking of which, can I get you something to Eat? Drink? Nibble? Read? Taste? Scribble?"
+"That's the beauty of it," said Clair. "You hop on, sip a tea, and \textit{boom}... you're halfway across the country. Speaking of which, can I get you something to eat? drink? nibble? read? taste? scribble?"
 
 She emphasized each suggestion more exasperated than the last.
 
