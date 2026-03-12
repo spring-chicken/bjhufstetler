@@ -87,7 +87,7 @@ Johan paused. He studied the expression of incredulity and disbelief painted on 
 
 Johan looked exceedingly pleased with his explanation. Lily looked confused.
 
-"And that's Snowtap," said Johan. "The stations, cables, elevators, platforms, tube, hula hoop, and trains, all together, were Snowtap. It connected our world, elevated us into space, and made an astronomical amount of money for its owners."
+"And that's Snowtap," said Johan. "The stations, cables, elevators, platforms, tube, hula hoop, and trains, all together, were Snowtap. It connected our world, elevated us into space, and made an \textit{astronomical} amount of money for its owners."
 
 "You got it?" asked Johan. "Or I'm'a have to repeat it slow-like?"
 
