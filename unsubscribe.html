@@ -1,67 +1,36 @@
 <!DOCTYPE html>
-<html lang="en" data-capo>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Unsubscribe | BJ Hufstetler</title>
+        <meta name="robots" content="noindex">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" href="public/favicon.ico" type="image/x-icon">
-        <title>Unsubscribe</title>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
     </head>
-    <body class="page" data-test="app-ready">
-            <div class="author-head">
-                <h1>Thanks for reading!</h1>
+    <body class="page">
+        <header class="author-head">
+            <h1>Thanks for reading!</h1>
+        </header>
+        <main class="card">
+            <p>Thank you so much for joining me. Hope you enjoyed your time!</p>
+            <div class="signup-form">
+                <form class="signup" data-action="unsubscribe">
+                    <label for="txt-signup" class="visually-hidden">Email address</label>
+                    <input id="txt-signup" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+                    <input type="hidden" name="action" value="unsubscribe">
+                    <div>
+                        <button type="submit">Unsubscribe</button>
+                    </div>
+                    <p class="form-status" role="status" aria-live="polite"></p>
+                </form>
             </div>
-            <div class="card">
-                <div>Thank you so much for joining me. Hope you enjoyed your time!</div>
-                <div class="signup-form">
-                    <form id="frm-signup" method="POST">
-                        <input id="txt-signup" type="text" name="email" placeholder="Your email" required>
-                        <input type="hidden" name="action" id="frm-action" value="subscribe">
-                        <div>                        
-                            <!-- <button id="btn-signup" type="submit">Subscribe</button> -->
-                            <button id="btn-unsubscribe" type="button">Unsubscribe</button>
-                        </div>
-                    </form>
-                </div>
-            
-        </div>
+            <p class="small-note"><a href="/">Back to bjhufstetler.com</a></p>
+        </main>
 
-        <script>
-           document.addEventListener('DOMContentLoaded', function () {
-                const form = document.getElementById('frm-signup');
-                const emailInput = document.getElementById('txt-signup');
-                const actionInput = document.getElementById('frm-action');
-                const scriptURL = "https://script.google.com/macros/s/AKfycbyCzpHJDvtD3Z0lcX9JFrafHW0ZCpam7fo5yX_Hk7bpQR_8zyrG25OuafcGzmi8EcI-/exec";
-
-                function submitForm() {
-                    const formData = new FormData(form);
-                    fetch(scriptURL, {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.text())
-                    .then(text => {
-                        alert(text);
-                        emailInput.value = "";
-                    })
-                    .catch(error => {
-                        console.error("Error!", error.message);
-                        alert("Something went wrong. Please try again.");
-                    });
-                }
-
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    actionInput.value = 'subscribe';
-                    submitForm();
-                });
-
-                document.getElementById('btn-unsubscribe').addEventListener('click', function () {
-                    actionInput.value = 'unsubscribe';
-                    submitForm();
-                });
-            });
-        </script>
+        <script src="/signup.js" defer></script>
     </body>
 </html>

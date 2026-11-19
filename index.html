@@ -1,101 +1,85 @@
 <!DOCTYPE html>
-<html lang="en" data-capo>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
-        <link rel="icon" href="public/favicon.ico" type="image/x-icon">
         <title>BJ Hufstetler</title>
+        <meta name="description" content="BJ Hufstetler, author of The Epoch of Kepler: Snowtap. Read the story online and sign up for chapter updates.">
+        <link rel="canonical" href="https://bjhufstetler.com/">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://bjhufstetler.com/">
+        <meta property="og:title" content="BJ Hufstetler">
+        <meta property="og:description" content="Author of The Epoch of Kepler: Snowtap. Read the story online and sign up for chapter updates.">
+        <meta property="og:image" content="https://bjhufstetler.com/Snowtap/imgs/cover-social.jpg">
+        <meta property="og:image:alt" content="Cover of The Epoch of Kepler: Snowtap">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:creator" content="@bjhufstetler">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
     </head>
-    <body class="body" data-test="app-ready">
-        <div class="author-head">
+    <body class="body">
+        <header class="author-head">
             <h1>BJ Hufstetler</h1>
-        </div>
+        </header>
 
-        <div class="book-card">
-            <div class="book-img">
-                <img src="/Snowtap/imgs/cover-front.png">
-            </div>
-            <div class="book-details">
-                <div><h2>The Epoch Of Kepler</h2></div>
-                <div><h3>Snowtap</h3></div>
-                <div>Mentally trapped in the past, Kepler embarks upon the opportunity of a lifetime with the potential to change his and his family's future.</div>
-                <div class="book-links-read">
-                    <a href="/snowtap.html" style="border: 1px solid black; padding: 0.3em 0.6em;">Read it now</a>
+        <main>
+            <section class="book-card">
+                <div class="book-img">
+                    <a href="/snowtap.html" class="img-link">
+                        <img src="/Snowtap/imgs/cover-front.webp" width="900" height="1324" alt="Cover of The Epoch of Kepler: Snowtap">
+                    </a>
                 </div>
-                <div class="book-links-buy"></div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div><h2>Stay Informed</h2></div>
-            <div>Sign up for news about BJ Hufstetler and updates on Kepler's Saga.</div>
-            <p>Note: I will only send out emails when there is an update to a story here (~once every week or so). You can unsubscribe at any time. I will never give your email address away for any reason.</p>
-            <div class="signup-form">
-                <form id="frm-signup" method="POST">
-                    <input id="txt-signup" type="text" name="email"  placeholder="Your email" required>
-                    <input type="hidden" name="action" id="frm-action" value="subscribe">
-                    <div>                        
-                        <button id="btn-signup" type="submit">Subscribe</button>
-                        <button id="btn-unsubscribe" type="button">Unsubscribe</button>
+                <div class="book-details">
+                    <h2>The Epoch Of Kepler</h2>
+                    <h3>Snowtap</h3>
+                    <p>Mentally trapped in the past, Kepler embarks upon the opportunity of a lifetime with the potential to change his and his family's future.</p>
+                    <div class="book-links-read">
+                        <a href="/snowtap.html" class="button-link">Read it now</a>
                     </div>
-                </form>
-            </div>
-        </div>
+                    <div class="book-links-buy"></div>
+                </div>
+            </section>
 
-        <div class="card">
-            <div><h2>About the Author</h2></div>
-            <div class="author">
-                <p>I am a mechanical engineer and space operations officer serving in the United States Space Force, currently working as a NASA CapCom for the International Space Station. My past roles include Space Sciences Department Head at the Space Force's premier technical school, chief satellite engineer for a $30B constellation, air quality engineer, middle school English and Calculus teacher in South Korea, and line cook/dishwasher.</p>
-                <p>I am passionate about teaching orbital mechanics and exploring Fermi style rabbit holes. Outside of work, I like running, cycling, reading, and listening to podcasts. You can find me on <a href="https://x.com/bjhufstetler">X</a>, though I mostly just repost space news.</p>
-                <p>Fun fact: My five-person D&D group once played the same campaign weekly for eight straight years! I'm also honored to be a past recipient of the <a href="https://geeklyinc.com/">GeeklyInc</a> Geekly of the Year Award.</p>
-                <p>All opinions are my own.</p>
-            </div>
-            <div class="author-img">
-                <img src="public/author-portrait.png">
-            </div>
-        </div>
-        
-        <div class="card">
-            <div><h2>Contact</h2></div>
-            <p>Contact BJ Hufstetler via email at <a href="mailto:self@bjhufstetler.com">self@bjhufstetler.com</a>.</p>
-        </div>
-        <script>
-           document.addEventListener('DOMContentLoaded', function () {
-                const form = document.getElementById('frm-signup');
-                const emailInput = document.getElementById('txt-signup');
-                const actionInput = document.getElementById('frm-action');
-                const scriptURL = "https://script.google.com/macros/s/AKfycbyCzpHJDvtD3Z0lcX9JFrafHW0ZCpam7fo5yX_Hk7bpQR_8zyrG25OuafcGzmi8EcI-/exec";
+            <section class="card">
+                <h2>Stay Informed</h2>
+                <p>Sign up for news about BJ Hufstetler and updates on Kepler's Saga.</p>
+                <p>Note: I will only send out emails when there is an update to a story here (~once every week or so). You can unsubscribe at any time. I will never give your email address away for any reason.</p>
+                <div class="signup-form">
+                    <form class="signup" data-action="subscribe">
+                        <label for="txt-signup" class="visually-hidden">Email address</label>
+                        <input id="txt-signup" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+                        <input type="hidden" name="action" value="subscribe">
+                        <div>
+                            <button type="submit">Subscribe</button>
+                        </div>
+                        <p class="form-status" role="status" aria-live="polite"></p>
+                    </form>
+                    <p class="small-note">Already subscribed? <a href="/unsubscribe.html">Unsubscribe here</a>.</p>
+                </div>
+            </section>
 
-                function submitForm() {
-                    const formData = new FormData(form);
-                    fetch(scriptURL, {
-                        method: 'POST',
-                        body: formData
-                    })
-                    .then(response => response.text())
-                    .then(text => {
-                        alert(text);
-                        emailInput.value = "";
-                    })
-                    .catch(error => {
-                        console.error("Error!", error.message);
-                        alert("Something went wrong. Please try again.");
-                    });
-                }
+            <section class="card">
+                <h2>About the Author</h2>
+                <div class="author">
+                    <p>I am a mechanical engineer and space operations officer serving in the United States Space Force, currently working as a NASA CapCom for the International Space Station. My past roles include Space Sciences Department Head at the Space Force's premier technical school, chief satellite engineer for a $30B constellation, air quality engineer, middle school English and Calculus teacher in South Korea, and line cook/dishwasher.</p>
+                    <p>I am passionate about teaching orbital mechanics and exploring Fermi style rabbit holes. Outside of work, I like running, cycling, reading, and listening to podcasts. You can find me on <a href="https://x.com/bjhufstetler">X</a>, though I mostly just repost space news.</p>
+                    <p>Fun fact: My five-person D&amp;D group once played the same campaign weekly for eight straight years! I'm also honored to be a past recipient of the <a href="https://geeklyinc.com/">GeeklyInc</a> Geekly of the Year Award.</p>
+                    <p>All opinions are my own.</p>
+                </div>
+                <div class="author-img">
+                    <img src="/public/author-portrait.webp" width="500" height="631" alt="Portrait of BJ Hufstetler" loading="lazy">
+                </div>
+            </section>
 
-                form.addEventListener('submit', function (e) {
-                    e.preventDefault();
-                    actionInput.value = 'subscribe';
-                    submitForm();
-                });
+            <section class="card">
+                <h2>Contact</h2>
+                <p>Contact BJ Hufstetler via email at <a href="mailto:self@bjhufstetler.com">self@bjhufstetler.com</a>.</p>
+            </section>
+        </main>
 
-                document.getElementById('btn-unsubscribe').addEventListener('click', function () {
-                    actionInput.value = 'unsubscribe';
-                    submitForm();
-                });
-            });
-        </script>
+        <script src="/signup.js" defer></script>
     </body>
 </html>
