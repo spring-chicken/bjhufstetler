@@ -1,4 +1,3 @@
-\newchapter{Lekan Station}
 \lettrine[lraise=0.1]{B}{ehind} a podium outside the door stood a woman wearing an impeccably tailored, royal indigo uniform, silver accents gleaming on her shoulders, the Snowtap emblem pinned above them.
 
 "Is everyone inside the vehicle?" she asked.

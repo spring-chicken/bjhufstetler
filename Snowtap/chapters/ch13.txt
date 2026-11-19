@@ -1,4 +1,3 @@
-\newchapter{Platform 20}
 \lettrine[lraise=0.1]{H}{arris} stood at the elevator door as the last of the passengers filed out. He was waiting patiently when Kepler's family reached him. With a smile, he pressed a small card into Johan's hand as he passed.
 
 "Emergency information for Platform 20," he said. "You don't need it. People never do. But there it is, just in case."

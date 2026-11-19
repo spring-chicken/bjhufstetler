@@ -1,4 +1,3 @@
-\newchapter{Johan}
 \lettrine[lraise=0.1]{G}{asping} for air, Kepler woke up with a jolt, his chest heaving. Sweat dampened his forehead and soaked into his shirt. His hands trembled, clutching his blanket tightly.
 
 Apart from the sound of his ragged breathing, the room was still. He glanced toward the window. The glow from Petralum had shifted, signaling the approach of dawn. Beaming hues of pink and orange began to seep into the sky, blending with the lingering darkness. Desi's bed was empty. She must have gotten up already.

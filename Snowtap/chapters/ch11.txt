@@ -1,4 +1,3 @@
-\newchapter{Snowtap}
 \lettrine[lraise=0.1]{K}{epler} skidded to a stop beneath the colossal model of Snowtap at the museum's center. The circular replica hovered overhead, delicate lights threading its rim. Tiny elevators crept along glittering tethers.
 
 His heart thumped, and his grin stretched until his cheeks ached. This was so much better than the pictures in his book.

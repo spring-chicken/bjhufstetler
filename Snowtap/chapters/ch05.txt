@@ -1,4 +1,3 @@
-\newchapter{Grandma}
 \lettrine[lraise=0.1]{S}{tretching} out in front of them, long shadows guided Kepler and Desi home. The sun had just cleared the horizon, warming their backs, and the dew still clung to the tall grass along the road's edge. Modest homes clustered around them like weathered stones, dressed in reed-thatched roofs and tangled gardens of mint and violet bloom.
 
 Kepler tilted his head toward the pale morning sky.

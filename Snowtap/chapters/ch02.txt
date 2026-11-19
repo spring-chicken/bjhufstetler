@@ -1,4 +1,3 @@
-\newchapter{Kepler}
 \lettrine[lraise=0.1]{L}{ying} awake on his narrow bed, Kepler stared up at his translucent canopy. Tiny luminescent dots were woven into the fabric, depicting the stars visible from Maerun. They glowed dimly in hues of blue and green, shifting gently like fireflies caught drifting in a slow dance with the crisp night air.
 
 The little room he shared with his little sister was modest, with bare walls made of smooth, polished stone that retained the day's warmth. Shelves lined one side, cluttered with dust collectors like a stack of newspaper comics, some attractive rocks, deconstructed mechanical devices he had tinkered with, and a book of plants and animals native to their area.

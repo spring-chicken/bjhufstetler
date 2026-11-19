@@ -1,5 +1,4 @@
 
-\newchapter{Ghostline}
 \lettrine[lraise=0.1]{D}{espite} it still being early morning, Johan encouraged Kepler to rest his eyes.
 
 "We've got a long journey ahead of us, and it'll be pretty late before we start our trip up the tether," said Johan.
