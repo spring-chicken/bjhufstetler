@@ -1,4 +1,3 @@
-\newchapter{Kepler's Nightmare}
 \lettrine[lraise=0.1]{L}{ost}, Kepler found himself standing at the edge of the woods, the trees looming taller than ever. Their branches twisted skyward, clawing at the night like skeletal fingers into the air, thick with fog, obscuring the path ahead.
 
 "Cynthia?" he called out, his voice echoing unnaturally.

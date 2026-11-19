@@ -1,4 +1,3 @@
-\newchapter{Interruption}
 \lettrine[lraise=0.1]{L}{ily} sat cross-legged on the packed earth, picking absent mindedly at the dusty hem of her jeans as Johan paused to rummage in his pack. The crinkle of plastic was loud in the still air as he pulled out a bottle of water. The sun was warming the humid air and had momentarily tucked itself behind some branches.
 
 "Grandpa?" asked Lily, softly.

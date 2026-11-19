@@ -1,4 +1,3 @@
-\newchapter{Ghostline 2}
 \lettrine[lraise=0.1]{S}{tepping} out of the car, Kepler first noticed a red warning sign with bold black letters, as if the Ghostline itself had rules you'd better not break.
 
 1. Power-off vehicles while the bay doors are closed.
