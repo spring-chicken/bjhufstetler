@@ -89,6 +89,7 @@ html, body {
 
 .author-img img {
     width: 100%;
+    height: auto;
 }
 
 /* Paragraph Text */
