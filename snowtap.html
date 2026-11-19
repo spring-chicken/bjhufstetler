@@ -1,250 +1,238 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Epoch of Kepler: Snowtap | BJ Hufstetler</title>
+  <meta name="description" content="Mentally trapped in the past, Kepler embarks upon the opportunity of a lifetime with the potential to change his and his family's future. Read The Epoch of Kepler: Snowtap by BJ Hufstetler.">
+  <link rel="canonical" href="https://bjhufstetler.com/snowtap.html">
+  <meta property="og:type" content="book">
+  <meta property="og:url" content="https://bjhufstetler.com/snowtap.html">
+  <meta property="og:title" content="The Epoch of Kepler: Snowtap">
+  <meta property="og:description" content="Mentally trapped in the past, Kepler embarks upon the opportunity of a lifetime with the potential to change his and his family's future.">
+  <meta property="og:image" content="https://bjhufstetler.com/Snowtap/imgs/cover-social.jpg">
+  <meta property="og:image:alt" content="Cover of The Epoch of Kepler: Snowtap">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@bjhufstetler">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="public/snowtap.ico" type="image/x-icon">
-  <title>The Epoch of Kepler</title>
+  <link rel="icon" href="/public/snowtap.ico" type="image/x-icon">
 </head>
 <body>
   <div class="page">
-    <div class="page-header">
-      <a href="/index.html">Home</a>
+    <header class="page-header">
+      <a href="/">Home</a>
       <span>The Epoch of Kepler: Snowtap</span>
-    </div>
+    </header>
 
     <!-- Chapter Dropdown -->
-    <div class="chapter-dropdown">
+    <nav class="chapter-dropdown">
       <label for="chapter-select">Select Chapter:</label>
       <select id="chapter-select">
         <option value="">-- Cover --</option>
       </select>
-    </div>
+    </nav>
 
-    <!-- TOC Section -->
+    <!-- Cover Section -->
     <div id="toc">
-      <p style="background-color: rgb(253, 221, 221); text-align: center;">Last update: <i><span id="txt-update"></span></i>.</p>    
+      <p class="update-banner">Last update: <i><span id="txt-update"></span></i>.</p>
       <div class="book-img">
-        <img src="/Snowtap/imgs/cover-front.png">
+        <a href="#01" class="img-link">
+          <img src="/Snowtap/imgs/cover-front.webp" width="900" height="1324" alt="Cover of The Epoch of Kepler: Snowtap">
+        </a>
       </div>
+      <p class="start-reading"><a href="#01" class="button-link">Start reading at Chapter 1</a></p>
 
-      <div class="card">
-        <div><h2>Stay Informed</h2></div>
+      <section class="card">
+        <h2>Stay Informed</h2>
         <p>Sign up for updates about BJ Hufstetler and Kepler's Saga.</p>
         <div class="signup-form">
-          <form id="frm-signup">
-            <input id="txt-signup" type="text" name="email" required placeholder="Your email">
-            <input type="hidden" name="action" id="form-action" value="subscribe">
+          <form class="signup" data-action="subscribe">
+            <label for="txt-signup" class="visually-hidden">Email address</label>
+            <input id="txt-signup" type="email" name="email" placeholder="Your email" autocomplete="email" required>
+            <input type="hidden" name="action" value="subscribe">
             <div>
-              <button id="btn-signup" type="submit">Subscribe</button>
-              <button id="btn-unsubscribe" type="button">Unsubscribe</button>
+              <button type="submit">Subscribe</button>
             </div>
+            <p class="form-status" role="status" aria-live="polite"></p>
           </form>
+          <p class="small-note">Already subscribed? <a href="/unsubscribe.html">Unsubscribe here</a>.</p>
         </div>
-      </div>
+      </section>
     </div>
 
     <!-- Chapter Content Section -->
-    <div id="chapter-content" style="display:none;">
-      <div class="chapter" id="chapter-title"></div>
+    <main id="chapter-content" hidden>
+      <h1 class="chapter" id="chapter-title"></h1>
+      <p class="chapter-name" id="chapter-name"></p>
       <div id="output"></div>
-      <br/>
-      <div class="next-chapter-link"></div>
+      <nav class="chapter-nav" id="chapter-nav"></nav>
 
       <!-- Fan Submissions -->
-      <section class="fan-submissions">
+      <section class="fan-submissions" id="fan-submissions">
         <h2 class="fan-header">Fan Art</h2>
         <p class="fan-submission">
-          Join the community and discussion. <br/>
+          Join the community and discussion. <br>
           Submit art or comments to <a href="mailto:self@bjhufstetler.com">self@bjhufstetler.com</a>
         </p>
         <div id="fanart" class="fanart"></div>
       </section>
-    </div>
+    </main>
   </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const output = document.getElementById('output');
-      const fanart = document.getElementById('fanart');
-      const chapterSelect = document.getElementById('chapter-select');
-      const toc = document.getElementById('toc');
-      const chapterContent = document.getElementById('chapter-content');
-      const chapterTitle = document.getElementById('chapter-title');
-      const nextLink = document.querySelector('.next-chapter-link');
 
        /**
-       *  _    _ _____  _____       _______ ______   _    _ ______ _____  ______ 
+       *  _    _ _____  _____       _______ ______   _    _ ______ _____  ______
        * | |  | |  __ \|  __ \   /\|__   __|  ____| | |  | |  ____|  __ \|  ____|
-       * | |  | | |__) | |  | | /  \  | |  | |__    | |__| | |__  | |__) | |__   
-       * | |  | |  ___/| |  | |/ /\ \ | |  |  __|   |  __  |  __| |  _  /|  __|  
-       * | |__| | |    | |__| / ____ \| |  | |____  | |  | | |____| | \ \| |____ 
+       * | |  | | |__) | |  | | /  \  | |  | |__    | |__| | |__  | |__) | |__
+       * | |  | |  ___/| |  | |/ /\ \ | |  |  __|   |  __  |  __| |  _  /|  __|
+       * | |__| | |    | |__| / ____ \| |  | |____  | |  | | |____| | \ \| |____
        *  \____/|_|  __|_____/_/    \_\_|  |______| |_|  |_|______|_|  \_\______|
-       * 
-       *             \ \    / /                                                  
-       *              \ \  / /                                                   
-       *               \ \/ /                                                    
-       *                \  /                                                     
+       *
+       *             \ \    / /
+       *              \ \  / /
+       *               \ \/ /
+       *                \  /
        *                 \/                                                      */
       const maxChapter = 13;
       const updateDate = "3/23/26";
 
-      const updateDateElement = document.getElementById("txt-update");
-      updateDateElement.innerHTML = updateDate;
+      // Fan art goes in Snowtap/imgs/ as <chapter>-<n>.webp, .jpg or .png
+      // (e.g. 05-1.png, 05-2.jpg). They are shown in order until a number is missing.
+      const fanArtExtensions = ['webp', 'jpg', 'png'];
 
-      const select = document.getElementById("chapter-select");
+      const toc = document.getElementById('toc');
+      const chapterContent = document.getElementById('chapter-content');
+      const chapterTitle = document.getElementById('chapter-title');
+      const chapterName = document.getElementById('chapter-name');
+      const output = document.getElementById('output');
+      const chapterNav = document.getElementById('chapter-nav');
+      const fanSection = document.getElementById('fan-submissions');
+      const fanart = document.getElementById('fanart');
+      const chapterSelect = document.getElementById('chapter-select');
+      const baseTitle = document.title;
+
+      document.getElementById('txt-update').textContent = updateDate;
+
+      const pad = n => String(n).padStart(2, '0');
 
       for (let i = 1; i <= maxChapter; i++) {
-        const padded = i.toString().padStart(2, "0");
-        const option = document.createElement("option");
-        option.value = padded;
+        const option = document.createElement('option');
+        option.value = pad(i);
         option.textContent = `${i}`;
-        select.appendChild(option);
+        chapterSelect.appendChild(option);
       }
 
-      // Load chapter from dropdown or TOC link
-      function loadChapter(chNumber) {
-        const chNum = chNumber.padStart(2, '0');
-        const textUrl = `/Snowtap/chapters/ch${chNum}.txt`;
-        const imgBase = `/Snowtap/imgs/${chNum.toString().padStart(2, '0')}-`;
+      // The address bar (#01, #02, ...) is the single source of truth for what is
+      // shown, so refresh, bookmarks, shared links and the back button all work.
+      let loadToken = 0;
 
-        window.location.hash = `#${chNum}`;
+      function route() {
+        const match = window.location.hash.match(/^#(\d+)$/);
+        if (match) showChapter(parseInt(match[1], 10));
+        else showCover();
+      }
 
-        fetch(textUrl)
+      function showCover() {
+        loadToken++;
+        toc.hidden = false;
+        chapterContent.hidden = true;
+        chapterSelect.value = '';
+        document.title = baseTitle;
+      }
+
+      function formatChapter(text) {
+        text = text.replace(/\\newchapter\{.*?\}/g, '');
+        text = text.replace(/\\lettrine\[.*?\]\{(.*?)\}\{(.*?)\}/g, (match, drop, rest) => {
+          return `<span class="dropcap">${drop}</span>${rest}`;
+        });
+        text = text.replace(/\\textit\{(.*?)\}/g, '<i>$1</i>');
+        text = text.replace(/\\threedots/g, '<div class="dots">***</div>');
+        const paragraphs = text.trim().split(/\n\s*\n/);
+        return `<div class="pb">${paragraphs.map(p => `<div>${p.trim()}</div>`).join('\n')}</div>`;
+      }
+
+      function showChapter(n) {
+        const token = ++loadToken;
+        const chNum = pad(n);
+        chapterSelect.value = n <= maxChapter ? chNum : '';
+
+        fetch(`/Snowtap/chapters/ch${chNum}.txt`)
           .then(res => {
-            if (!res.ok) {
-              throw new Error("Chapter not available.");
-            }
+            if (!res.ok) throw new Error('Chapter not available.');
             return res.text();
           })
           .then(text => {
-            toc.style.display = 'none';
-            chapterContent.style.display = 'block';
-            chapterTitle.textContent = `Chapter ${parseInt(chNum)}`;
-            
-            // Replace LaTeX-style formatting
-            text = text.replace(/\\newchapter\{.*?\}/g, '');
-            text = text.replace(/\\lettrine\[.*?\]\{(.*?)\}\{(.*?)\}/g, (match, drop, rest) => {
-              return `<span class="dropcap">${drop}</span>${rest}`;
-            });
-            text = text.replace(/\\textit\{(.*?)\}/g, '<i>$1</i>');
-            text = text.replace(/\\threedots/g, '<div class="dots">***</div>');
-            const paragraphs = text.trim().split(/\n\s*\n/);
-            output.innerHTML = `<div class="pb">${paragraphs.map(p => `<div>${p.trim()}</div>`).join('\n')}</div>`;
-            
-            // Show next chapter link if exists
-            const nextCh = parseInt(chNum) + 1;
-            chNum < maxChapter ? 
-              nextLink.innerHTML = `<a href="#" data-ch="${nextCh.toString().padStart(2, '0')}">Next Chapter</a>`
-              :nextLink.innerHTML = `<a href="#" data-ch="99">Next Chapter</a>`;
-            
-            // Load fan art
-            loadImages(imgBase);
+            if (token !== loadToken) return; // reader already moved on
+            const nameMatch = text.match(/\\newchapter\{(.*?)\}/);
+            const name = nameMatch ? nameMatch[1] : '';
+
+            chapterTitle.textContent = `Chapter ${n}`;
+            chapterName.textContent = name;
+            document.title = `Chapter ${n}${name ? ': ' + name : ''} | The Epoch of Kepler`;
+            output.innerHTML = formatChapter(text);
+
+            const prev = n > 1 ? `<a href="#${pad(n - 1)}">&larr; Previous Chapter</a>` : '<span></span>';
+            const next = `<a href="#${n < maxChapter ? pad(n + 1) : '99'}">Next Chapter &rarr;</a>`;
+            chapterNav.innerHTML = prev + next;
+
+            fanSection.hidden = false;
+            loadFanArt(chNum, n, token);
+            showContent();
           })
           .catch(err => {
-            toc.style.display = 'none';
-            chapterContent.style.display = 'block';
-            chapterTitle.textContent = `Coming Soon`;
-            output.innerHTML = `<p>Join the <a href="/snowtap.html">mailing list</a> to be notified when this chapter becomes available.`;
+            if (token !== loadToken) return;
+            chapterTitle.textContent = 'Coming Soon';
+            chapterName.textContent = '';
+            document.title = baseTitle;
+            output.innerHTML = '<p>Join the <a href="#">mailing list</a> to be notified when this chapter becomes available.</p>';
+            chapterNav.innerHTML = `<a href="#${pad(maxChapter)}">&larr; Back to Chapter ${maxChapter}</a><span></span>`;
+            fanSection.hidden = true;
             fanart.innerHTML = '';
-            nextLink.innerHTML = ''; // hide or disable the next link
-            console.warn("Chapter not yet available:", err);
+            showContent();
+            console.warn('Chapter not yet available:', err);
           });
       }
 
-      const initialHash = window.location.hash;
-      if (initialHash && /^#\d+$/.test(initialHash)) {
-        const chapter = initialHash.replace('#', '').padStart(2, '0');
-        loadChapter(chapter);
-        chapterSelect.value = chapter;
-      };
+      function showContent() {
+        toc.hidden = true;
+        chapterContent.hidden = false;
+        window.scrollTo(0, 0);
+      }
 
-      function loadImages(basePath) {
-        fanart.innerHTML = "";
-        // Try images named 1.png, 2.png, ... until failure
-        let index = 1;
-        function tryLoadNext() {
+      // Show fan art <chapter>-1, -2, ... trying each file type, until one is missing.
+      function loadFanArt(chNum, n, token) {
+        fanart.innerHTML = '';
+        function tryImage(index, extIndex) {
+          if (token !== loadToken || extIndex >= fanArtExtensions.length) return;
           const img = new Image();
-          const src = `${basePath}${index}.png`;
-          img.src = src;
           img.onload = () => {
+            if (token !== loadToken) return;
+            img.alt = `Fan art for Chapter ${n}`;
             const container = document.createElement('div');
             container.className = 'fan-credit';
             container.appendChild(img);
             fanart.appendChild(container);
-            index++;
-            tryLoadNext(); // Try next image
+            tryImage(index + 1, 0);
           };
-          img.onerror = () => {
-            return
-          };
+          img.onerror = () => tryImage(index, extIndex + 1);
+          img.src = `/Snowtap/imgs/${chNum}-${index}.${fanArtExtensions[extIndex]}`;
         }
-        tryLoadNext();
+        tryImage(1, 0);
       }
 
-      // TOC links
-      document.querySelectorAll('.toc-list a').forEach(link => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          loadChapter(e.target.dataset.ch);
-          chapterSelect.value = e.target.dataset.ch;
-        });
+      chapterSelect.addEventListener('change', e => {
+        window.location.hash = e.target.value; // '' goes back to the cover
       });
 
-      // Dropdown selection
-      chapterSelect.addEventListener('change', (e) => {
-        const value = e.target.value;
-        if (value) loadChapter(value);
-        else {
-          toc.style.display = 'block';
-          chapterContent.style.display = 'none';
-        }
-      });
-
-      // Next chapter link
-      nextLink.addEventListener('click', (e) => {
-        const ch = e.target.dataset.ch;
-        if (ch) {
-          loadChapter(ch);
-          chapterSelect.value = ch;
-        }
-      });
-
-      // Email subscription handling (as before)
-      const form = document.getElementById('frm-signup');
-      const emailInput = document.getElementById('txt-signup');
-      const actionInput = document.getElementById('form-action');
-      const scriptURL = "https://script.google.com/macros/s/AKfycbyCzpHJDvtD3Z0lcX9JFrafHW0ZCpam7fo5yX_Hk7bpQR_8zyrG25OuafcGzmi8EcI-/exec";
-
-      function submitForm() {
-        const formData = new FormData(form);
-        fetch(scriptURL, {
-          method: 'POST',
-          body: formData
-        })
-        .then(res => res.text())
-        .then(text => {
-          alert(text);
-          emailInput.value = "";
-        })
-        .catch(err => {
-          console.error("Error!", err.message);
-          alert("Something went wrong. Please try again.");
-        });
-      }
-
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        actionInput.value = 'subscribe';
-        submitForm();
-      });
-
-      document.getElementById('btn-unsubscribe').addEventListener('click', () => {
-        actionInput.value = 'unsubscribe';
-        submitForm();
-      });
+      window.addEventListener('hashchange', route);
+      route();
     });
   </script>
+  <script src="/signup.js" defer></script>
 </body>
 </html>

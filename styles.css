@@ -101,7 +101,7 @@ html, body {
     margin-top: 1em;
 }
 
-.signup-form input[type="text"] {
+.signup-form input[type="email"] {
     font-family: 'EB Garamond', serif;
     font-size: 1em;
     padding: 0.3em;
@@ -170,9 +170,23 @@ a:hover {
 
 .chapter {
     font-size: 1.8em;
+    font-weight: normal;
     font-variant: small-caps;
     text-align: center;
-    margin: 3em 0 2em;
+    margin: 3em 0 0;
+}
+
+.chapter-name {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.2em;
+    margin: 0.2em 0 2em;
+}
+
+.chapter-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
 }
 
 .next-chapter {
@@ -196,7 +210,6 @@ a:hover {
 }
 
 .dropcap {
-    float: bottom;
     font-size: 3em;
     line-height: 1;
     padding-right: 0.1em;
@@ -336,6 +349,64 @@ a:hover {
     color: black;
 }
 
+[hidden] {
+    display: none !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+a.button-link,
+.book-links-read a.button-link {
+    border: 1px solid black;
+    padding: 0.3em 0.6em;
+}
+
+a.button-link:hover {
+    background-color: #f7f7f7;
+}
+
+a.img-link,
+a.img-link:hover {
+    border-bottom: none;
+}
+
+.book-img img,
+.author-img img {
+    display: block;
+}
+
+.start-reading {
+    text-align: center;
+    margin: 0.5em 0 0;
+}
+
+.update-banner {
+    background-color: rgb(253, 221, 221);
+    text-align: center;
+}
+
+.signup-form button:disabled {
+    cursor: wait;
+    opacity: 0.6;
+}
+
+.form-status {
+    min-height: 1.6em;
+    margin: 0.5em 0 0;
+    font-style: italic;
+}
+
+.small-note {
+    font-size: 0.9em;
+}
+
 @media (max-width: 600px) {
     .page {
         max-width: 100%;
@@ -357,8 +428,9 @@ a:hover {
         border: none;
     }
 
-    .signup-form input[type="text"] {
+    .signup-form input[type="email"] {
         width: 100%;
+        box-sizing: border-box;
         margin-bottom: 1em;
     }
 
